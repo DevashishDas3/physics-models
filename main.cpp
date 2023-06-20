@@ -31,13 +31,13 @@ class dasgen{
         double energy_of_photon(){
 
             cout << "Enter wave frequency: ";
-            cin >> hz_photon;
 
             try{
-                energy_photon = hz_photon * planckh;
 
                 if (typeid(energy_photon).name() == "d"){
                     cout << "Validated" << endl;
+                    cin >> hz_photon;
+                    energy_photon = hz_photon * planckh;
                 }
 
                 else{
@@ -70,6 +70,8 @@ int main()
     */
 
     dasgen *p = new dasgen();
-    p->momentum_of_photon();
+    p -> momentum_of_photon();
+
+    cout << pthread_atfork << endl;
 
 }
