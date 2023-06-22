@@ -58,8 +58,6 @@ class dasgen{
             return energy_of_photon() * c;
         }
 
-
-
 };
 
 int main()
