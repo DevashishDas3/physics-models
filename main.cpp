@@ -64,10 +64,6 @@ class dasgen{
 
 int main()
 {
-    /*
-    dasgen generator;
-    generator.energy_of_photon();
-    */
 
     dasgen *p = new dasgen();
     p -> momentum_of_photon();
