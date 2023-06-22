@@ -9,9 +9,9 @@
 
 using namespace std;
 
+vector<string> words;
 
 void s_process(string sentence) {
-    vector<std::string> words;
  
     // Create a temporary string to hold each word
     string tempWord;
@@ -46,7 +46,7 @@ string trigonometric_derivation(){
 
     s_process(trg_exp);
 
-    for (word : words){
+    for (string word : words){ // where words is vec
         switch(word)
         {
             case "cos":
