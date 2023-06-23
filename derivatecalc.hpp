@@ -4,6 +4,7 @@
 #include <typeinfo>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 #include <iostream>
 
@@ -39,6 +40,19 @@ void s_process(string sentence) {
     // Words is used
 }
 
+/*
+
+void replace(std::string &str, const std::string &token, const std::string &newToken)
+{
+    size_t index = 0;
+    while((index = words.find(token, index)) != std::string::npos)
+    {
+        words.replace(index, token.length(), newToken);
+    }
+}
+
+*/
+
 string trigonometric_derivation(){
     string trg_exp;
     cout << "Enter trigonometric expression for differentiation: ";
@@ -46,22 +60,12 @@ string trigonometric_derivation(){
 
     s_process(trg_exp);
 
-    for (string word : words){ // where words is vec
-        switch(word)
-        {
-            case "cos":
-
-            case "sin":
-
-            case "tan":
-
-            case "sec":
-
-            case "csc":
-
-            default:
-                continue;
+    // for (string word : words){ // where words is vec
+    for(string word: words){
+        if (word == "cos"){
+            replace(words, "cos", "-sin") // Input will be very specific (EX: I = dQ/dt(-> "200 cos ( 0.5  t )"))
         }
     }
 }
+
 
