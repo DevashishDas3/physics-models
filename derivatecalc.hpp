@@ -8,14 +8,14 @@
 
 #include <iostream>
 
-using namespace std;
 
-vector<string> words;
 
-void s_process(string sentence) {
+std::vector<std::string> words;
+
+void s_process(std::string sentence) {
  
     // Create a temporary string to hold each word
-    string tempWord;
+    std::string tempWord;
  
     // Iterate over each character in the sentence
     for (char c : sentence) {
@@ -53,17 +53,17 @@ void replace(std::string &str, const std::string &token, const std::string &newT
 
 */
 
-string trigonometric_derivation(){
-    string trg_exp;
-    cout << "Enter trigonometric expression for differentiation: ";
-    cin >> trg_exp;
+std::string trigonometric_derivation(){
+    std::string trg_exp;
+    std::cout << "Enter trigonometric expression for differentiation: ";
+    std::cin >> trg_exp;
 
     s_process(trg_exp);
 
     // for (string word : words){ // where words is vec
-    for(string word: words){
+    for(std::string word: words){
         if (word == "cos"){
-            replace(words, "cos", "-sin") // Input will be very specific (EX: I = dQ/dt(-> "200 cos ( 0.5  t )"))
+            std::replace(words.begin(), words.end(), "cos", "-sin"); // Input will be very specific (EX: I = dQ/dt(-> "200 cos ( 0.5  t )"))
         }
     }
 }
