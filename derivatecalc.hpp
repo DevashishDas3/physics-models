@@ -4,7 +4,7 @@
 #include <typeinfo>
 #include <vector>
 #include <string>
-#include <algorithm>
+// #include <algorithm>
 #include <iostream>
 
 
@@ -39,17 +39,13 @@ void s_process(std::string sentence) {
     // Words is used
 }
 
-/*
-class replacement:
-    virtual replace(std::string &str, const std::string &token, const std::string &newToken)
-    {
-        size_t index = 0;
-        while((index = words.find(token, index)) != std::string::npos)
-        {
-            words.replace(index, token.length(), newToken);
-        }
-    }
-*/
+
+
+void replace(std::vector<std::string> rep_words, int index, std::string target, std::string replacement){
+    remove(rep_words.begin(), rep_words.end(), target);
+    rep_words.insert(index, replacement);
+}
+
 
 
 
@@ -63,7 +59,7 @@ std::string trigonometric_derivation(){
     // for (string word : words){ // where words is vec
     for(std::string word: words){
         if (word == "cos"){
-            replace(words.begin(), words.end(), "cos", "-sin"); // Input will be very specific (EX: I = dQ/dt(-> "200 cos ( 0.5  t )"))
+            //replace(); // Input will be very specific (EX: I = dQ/dt(-> "200 cos ( 0.5  t )"))
         }
     }
 }
